@@ -1,6 +1,7 @@
 package main
 
 import (
+	"aoc-2023/utils"
 	"bufio"
 	"errors"
 	"fmt"
@@ -26,17 +27,7 @@ func Trebuchet1() {
 		temp = append(temp, (first * 10) + second)
 	} 
 
-	fmt.Println(Sum(&temp))
-}
-
-func Sum(arr *[]int) int {
-	total := 0
-
-	for _, num := range *arr {
-		total += num
-	}
-
-	return total
+	fmt.Println(utils.Sum(&temp))
 }
 
 func FindFirstNumber(arr *string, rev bool) (int, error) {

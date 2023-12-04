@@ -8,6 +8,18 @@ import (
 	"strings"
 )
 
+var WordToInt = map[string]string{
+	"one":   "o1e",
+	"two":   "t2o",
+	"three": "t3e",
+	"four":  "4",
+	"five":  "5e",
+	"six":   "6",
+	"seven": "7n",
+	"eight": "e8t",
+	"nine":  "9e",
+}
+
 func Trebuchet2() {	
 	file, _ := os.Open("./data.txt")
 
@@ -27,11 +39,11 @@ func Trebuchet2() {
 		temp = append(temp, (first * 10) + second)
 	} 
 
-	fmt.Println(Sum(&temp))
+	fmt.Println(utils.Sum(&temp))
 }
 
 func ReplaceStringToNumber(str *string)  {
-	for key, value := range utils.WordToInt {
+	for key, value := range WordToInt {
 		*str = strings.ReplaceAll(*str, key, value)
 	}
 }
